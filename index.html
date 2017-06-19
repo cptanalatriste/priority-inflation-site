@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-    <title>Projection by TEMPLATED</title>
+    <title>The Priority Inflation Game</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -57,16 +57,96 @@
         </div>
 
         <footer>
-            <a href="https://cptanalatriste.github.io/inflation-tracker-extension/" class="button">Download the Plugin</a>
+            <a href="https://cptanalatriste.github.io/inflation-tracker-extension/" class="button">Download the
+                Plugin</a>
         </footer>
     </div>
 </section>
 
 
 <!-- Three -->
-<section id="three" class="wrapper align-center">
+<section id="three" class="wrapper">
     <div class="inner">
-        <div class="flex flex-2">
+        <h2>Overview</h2>
+
+        <p>Software development processes should consider the impact of its policies in the quality of the software
+            product
+            when designed. Factors like salary scales, promotion policies and recognition mechanisms have direct
+            influence
+            in the way software artifacts are produced, hence they have impact in its quality.</p>
+
+        <p>An instance of this problem is observed in the bug reporting process, where testers are encouraged to
+            increase
+            the reported priority in order to maximize the number of fixes delivered. This situation — called Priority
+            Inflation by practitioners — is analyzed using game theory. Game theory uses mathematical models to study
+            conflict and cooperation, and and we use them in this paper to identify inflation causes and to propose a
+            solution to this problem.</p>
+
+        <p>We built a simulation model of bug reporting as a part of our empirical game-theoretic analysis, finding that
+            what we call an <em>Unsupervised Prioritization</em> process it is not incentive compatible since at
+            equilibrium
+            the <em>Heurisitic Dishonest</em> strategy has a probability of 1.0. We also evaluated our proposed bug
+            reporting process —based on inflation penalties and reporter reputation— finding that with only a 3%
+            penalty factor we can move equilibrium towards a profile where the <em>euristic Honest</em> strategy has a
+            probability of 1.0.</p>
+
+
+        <hr class="major"/>
+
+        <h2>The Priority Inflation Problem</h2>
+        <p>We applied a survey to 152 software engineers to get some insights in the importance of priority
+            inflation. Here are the answers regarding reporter dishonesty on priority assignment:</p>
+
+        <div class="row align-center">
+            <article>
+                <div class="image round">
+                    <img src="images/deflation_plot.png" alt="Priority Deflation"
+                         style="height: auto; height: auto; max-width: 300px; max-height: 300px"/>
+                </div>
+                <header>
+                    <h3>Priority Deflation</h3>
+                </header>
+                <p>14.97% of the respondents are working on projects <br/> where the bug report priorities are
+                    frequently
+                    <br/>
+                    understated, while 64.63% of them work on projects <br/>where this scenario happens occasionally</p>
+            </article>
+            <article>
+                <div class="image round">
+                    <img src="images/inflation_plot.png" alt="Priority Inflation"
+                         style="height: auto; height: auto; max-width: 300px; max-height: 300px"/>
+                </div>
+                <header>
+                    <h3>Priority Inflation</h3>
+                </header>
+                <p>24.66% of the participants are working on projects <br/> where priority inﬂation is frequent while
+                    <br/>64.38%
+                    of them participate on a project <br/> where this happens occasionally. .</p>
+            </article>
+            <article>
+                <div class="image round">
+                    <img src="images/impact_plot.png" alt="Dishonesty Impact"
+                         style="height: auto; height: auto; max-width: 300px; max-height: 300px"/>
+                </div>
+                <header>
+                    <h3>Dishonesty Impact</h3>
+                </header>
+                <p>About 31.33% of them mention that understated/<br/>overstated priorities have a significant impact
+                    <br/> on
+                    their daily duties, while 50% of <br/> them believe the impact is minimum.</p>
+            </article>
+        </div>
+
+        <ul class="actions" style="text-align: center">
+            <li><a href="data/apache_responses.csv" class="button">Responses from Apache</a></li>
+            <li><a href="data/peru_responses.csv" class="button">Responses from Peru</a></li>
+            <li><a href="data/social_responses.csv" class="button">Responses from Social Media</a></li>
+        </ul>
+
+        <hr class="major"/>
+        <h2>A Game Theoretic Model for Bug Reporting</h2>
+
+        <div class="flex flex-2 align-center">
             <article>
                 <div class="image round">
                     <img src="images/pic01.jpg" alt="Pic 01"/>
@@ -93,6 +173,7 @@
                     <a href="#" class="button">Learn More</a>
                 </footer>
             </article>
+
         </div>
     </div>
 </section>
