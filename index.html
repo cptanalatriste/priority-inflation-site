@@ -94,8 +94,9 @@
         <hr class="major"/>
 
         <h2>The Priority Inflation Problem</h2>
-        <p>We applied a survey to 152 software engineers to get some insights in the importance of priority
-            inflation. Here are the answers regarding reporter dishonesty on priority assignment:</p>
+        <p>We designed a survey to assess the magnitude of the priority inflation problem. Through convenience
+            sampling we were able to reach 152 software engineers, whose answers were collected using
+            the Google Forms platform. </p>
 
         <div class="row align-center">
             <article>
@@ -144,6 +145,42 @@
         </ul>
 
         <hr class="major"/>
+        <h2>Game-Theoretic Process Improvement</h2>
+
+        <p>The priority inflation game is played by <em>bug reporters</em>, who are in charge of discovering and
+            reporting the bugs that are present on a specific version of a software system. When reporting a bug, the
+            reporters are required to assign a <em>priority</em> label to a bug report, which is related to the urgency
+            for a fix for this bug to be delivered.
+
+            The bug reporter objective is to maximize its <em>reporter score</em>, which is a function of the bugs
+            reported that got fixed and its ground-truth priority.</p>
+
+        <p>Formal game-theoretic analysis faces tractability problems when dealing with interactions among several
+            agents with a large number of strategies available to them. To address these issues, empirical
+            game-theoretic analysis relies in game reduction techniques and simulation to allow a rigorous analysis. The
+            empirical game-theoretic approach used in this project is described in the following diagram.</p>
+
+        <span class="image fit"><img src="images/empirical_game_theory.png"
+                                     alt="Empirical Game-Theoretic Analysis"/></span>
+
+        <p>The pay-off function of a bug reporter playing the Priority Inflation
+            Game depends on the number of reported bugs that got fixed as well as its ground-truth priority. Pay-off
+            calculation is critical for equilibrium analysis as we need the pay-off value for each player on each
+            strategy profile. We will rely on a simulation model of the bug reporting process for obtaining the number
+            of bug reports fixed per player per strategy profile.</p>
+
+
+        <div class="box alt">
+            <div class="row 50% uniform">
+                <div class="6u"><span class="image fit"><img src="images/simulation_overview.png"
+                                                             alt="Simulation Overview"/></span></div>
+                <div class="6u$"><span class="image fit"><img src="images/input_output_transformation.png"
+                                                              alt="Input-Output transformation"/></span></div>
+            </div>
+        </div>
+
+        <hr class="major"/>
+
         <h2>A Game Theoretic Model for Bug Reporting</h2>
 
         <div class="flex flex-2 align-center">
