@@ -147,6 +147,11 @@
         <hr class="major"/>
         <h2>Game-Theoretic Process Improvement</h2>
 
+
+        <span class="image fit"><img src="images/empirical_game_theory.png"
+                                     alt="Empirical Game-Theoretic Analysis"/></span>
+
+
         <p>The priority inflation game is played by <em>bug reporters</em>, who are in charge of discovering and
             reporting the bugs that are present on a specific version of a software system. When reporting a bug, the
             reporters are required to assign a <em>priority</em> label to a bug report, which is related to the urgency
@@ -158,26 +163,29 @@
         <p>Formal game-theoretic analysis faces tractability problems when dealing with interactions among several
             agents with a large number of strategies available to them. To address these issues, empirical
             game-theoretic analysis relies in game reduction techniques and simulation to allow a rigorous analysis. The
-            empirical game-theoretic approach used in this project is described in the following diagram.</p>
+            empirical game-theoretic approach used in this project is described in the diagram above.</p>
 
-        <span class="image fit"><img src="images/empirical_game_theory.png"
+        <h3>Simulating Bug Reporting</h3>
+
+
+        <span class="image fit"><img src="images/input_output_transformation.png"
                                      alt="Empirical Game-Theoretic Analysis"/></span>
 
-        <p>The pay-off function of a bug reporter playing the Priority Inflation
+        <p>The pay-off function of a bug
+            reporter
+            playing the Priority Inflation
             Game depends on the number of reported bugs that got fixed as well as its ground-truth priority. Pay-off
             calculation is critical for equilibrium analysis as we need the pay-off value for each player on each
-            strategy profile. We will rely on a simulation model of the bug reporting process for obtaining the number
+            strategy profile. We will rely on a simulation model —illustrated above—of the bug reporting process
+            for obtaining the number
             of bug reports fixed per player per strategy profile.</p>
 
 
-        <div class="box alt">
-            <div class="row 50% uniform">
-                <div class="6u"><span class="image fit"><img src="images/simulation_overview.png"
-                                                             alt="Simulation Overview"/></span></div>
-                <div class="6u$"><span class="image fit"><img src="images/input_output_transformation.png"
-                                                              alt="Input-Output transformation"/></span></div>
-            </div>
-        </div>
+        <ul class="actions" style="text-align: center">
+            <li><a href="data/bug_tracking_dataset.csv" class="button">Bug Tracking Dataset</a></li>
+            <li><a href="https://github.com/cptanalatriste/bug-report-simmodel" class="button">Bug Reporting Simulator</a></li>
+        </ul>
+
 
         <hr class="major"/>
 
