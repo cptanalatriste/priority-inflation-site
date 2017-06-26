@@ -16,11 +16,10 @@
 <!-- Header -->
 <header id="header">
     <div class="inner">
-        <a href="index.html" class="logo"><strong>CREST</strong> Center at UCL</a>
+        <a href="http://crest.cs.ucl.ac.uk/about/" class="logo"><strong>CREST</strong> Center</a>
         <nav id="nav">
-            <a href="index.html">Home</a>
-            <a href="generic.html">Generic</a>
-            <a href="elements.html">Elements</a>
+            <a href="http://sse.cs.ucl.ac.uk/introduction/">Software Systems Engineering Group</a>
+            <a href="http://www.cs.ucl.ac.uk/home/">UCL Department of Computer Science</a>
         </nav>
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
     </div>
@@ -57,8 +56,7 @@
         </div>
 
         <footer>
-            <a href="https://cptanalatriste.github.io/inflation-tracker-extension/" class="button">Download the
-                Plugin</a>
+            <a href="#" class="button">Paper in Progress</a>
         </footer>
     </div>
 </section>
@@ -183,8 +181,9 @@
 
 
         <ul class="actions" style="text-align: center">
-            <li><a href="data/bug_tracking_dataset.csv" class="button">Bug Tracking Dataset</a></li>
-            <li><a href="https://github.com/cptanalatriste/bug-report-simmodel" class="button">Download the Code</a></li>
+            <li><a href="data/apache_jira_dataset.zip" class="button">Bug Tracking Dataset</a></li>
+            <li><a href="https://github.com/cptanalatriste/bug-report-simmodel" class="button">Download the Code</a>
+            </li>
         </ul>
 
 
@@ -270,38 +269,28 @@
 
         <hr class="major"/>
 
+        <h2>A Support Tool for Throttling Bug Reporting</h2>
 
-        <h2>A Game Theoretic Model for Bug Reporting</h2>
-
-        <div class="flex flex-2 align-center">
-            <article>
-                <div class="image round">
-                    <img src="images/pic01.jpg" alt="Pic 01"/>
-                </div>
-                <header>
-                    <h3>Lorem ipsum<br/> dolor amet nullam</h3>
-                </header>
-                <p>Morbi in sem quis dui placerat ornare. Pellentesquenisi<br/>euismod in, pharetra a, ultricies in diam
-                    sed arcu. Cras<br/>consequat egestas augue vulputate.</p>
-                <footer>
-                    <a href="#" class="button">Learn More</a>
-                </footer>
-            </article>
-            <article>
-                <div class="image round">
-                    <img src="images/pic02.jpg" alt="Pic 02"/>
-                </div>
-                <header>
-                    <h3>Sed feugiat<br/> tempus adipicsing</h3>
-                </header>
-                <p>Pellentesque fermentum dolor. Aliquam quam lectus<br/>facilisis auctor, ultrices ut, elementum
-                    vulputate, nunc<br/> blandit ellenste egestagus commodo.</p>
-                <footer>
-                    <a href="#" class="button">Learn More</a>
-                </footer>
-            </article>
-
+        <div class="box alt">
+            <div class="row 50% uniform">
+                <div class="6u"><span class="image fit"><img src="images/issues.png" alt="Issues"/></span></div>
+                <div class="6u"><span class="image fit"><img src="images/reporters.png" alt="Reporters"/></span></div>
+            </div>
         </div>
+
+
+        <p>As
+            part of this project we built a software
+            tool to support the teams that adopt a throttling bug reporting
+            process, since according to our analysis is the best option to address Priority Inflation. Our tool —
+            called <em>JIRA Inflation Tracker</em> — is a Chrome extension for supporting teams that are using JIRA as
+            their bug tracking system.</p>
+
+
+        <ul class="actions" style="text-align: center">
+            <li><a href="https://cptanalatriste.github.io/inflation-tracker-extension/" class="button">Download the
+                Tool</a></li>
+        </ul>
     </div>
 </section>
 
@@ -343,6 +332,23 @@
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-101026112-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
 
 </body>
 </html>
