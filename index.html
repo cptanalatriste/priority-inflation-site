@@ -29,8 +29,8 @@
 <section id="banner">
     <div class="inner">
         <header>
-            <h1>The Priority Inflation Game</h1>
-            <h2 style="color:#fff">Improving Software Process vis Empirical Game Theory</h2>
+            <h1>The Assessor's Dilemma</h1>
+            <h2 style="color:#fff">Improving Bug Repair via Empirical Game Theory</h2>
         </header>
 
         <div class="flex ">
@@ -81,11 +81,11 @@
             solution to this problem.</p>
 
         <p>We built a simulation model of bug reporting as a part of our empirical game-theoretic analysis, finding that
-            what we call an <em>Unsupervised Prioritization</em> process it is not incentive compatible since at
+            what we call an <em>Distributed Prioritization</em> process it is not incentive compatible since at
             equilibrium
-            the <em>Heurisitic Dishonest</em> strategy has a probability of 1.0. We also evaluated our proposed bug
-            reporting process —based on inflation penalties and reporter reputation— finding that with only a 3%
-            penalty factor we can move equilibrium towards a profile where the <em>euristic Honest</em> strategy has a
+            the <em>Dishonest</em> strategy has a probability of 1.0. We also evaluated our proposed bug
+            reporting process —based on inflation penalties and reporter reputation— finding that with only a 20%
+            penalty factor we can move equilibrium towards a profile where the <em>Honest</em> strategy has a
             probability of 1.0.</p>
 
 
@@ -144,7 +144,7 @@
         </ul>
 
         <hr class="major"/>
-        <h2>Game-Theoretic Process Improvement</h2>
+        <h2>Modelling Software Processes as Games</h2>
 
 
         <span class="image fit"><img src="images/empirical_game_theory.png"
@@ -154,76 +154,80 @@
         <p>The priority inflation game is played by <em>bug reporters</em>, who are in charge of discovering and
             reporting the bugs that are present on a specific version of a software system. When reporting a bug, the
             reporters are required to assign a <em>priority</em> label to a bug report, which is related to the urgency
-            for a fix for this bug to be delivered.
-
-            The bug reporter objective is to maximize its <em>reporter score</em>, which is a function of the bugs
-            reported that got fixed and its ground-truth priority.</p>
+            for a fix for this bug to be delivered.</p>
 
         <p>Formal game-theoretic analysis faces tractability problems when dealing with interactions among several
             agents with a large number of strategies available to them. To address these issues, empirical
             game-theoretic analysis relies in game reduction techniques and simulation to allow a rigorous analysis. The
             empirical game-theoretic approach used in this project is described in the diagram above.</p>
 
-        <h3>Simulating Bug Reporting</h3>
-
-
-        <span class="image fit"><img src="images/input_output_transformation.png"
-                                     alt="Empirical Game-Theoretic Analysis"/></span>
 
         <p>The pay-off function of a bug
             reporter
-            playing the Priority Inflation
-            Game depends on the number of reported bugs that got fixed as well as its ground-truth priority. Pay-off
+            depends on the number of reported bugs that got fixed as well as its reported priority. Pay-off
             calculation is critical for equilibrium analysis as we need the pay-off value for each player on each
-            strategy profile. We will rely on a simulation model —illustrated above—of the bug reporting process
+            strategy profile. We will rely on a simulation model of the bug reporting process
             for obtaining the number
             of bug reports fixed per player per strategy profile.</p>
 
 
         <ul class="actions" style="text-align: center">
-            <li><a href="data/apache_jira_dataset.zip" class="button">Bug Tracking Dataset</a></li>
-            <li><a href="https://github.com/cptanalatriste/bug-report-simmodel" class="button">Download the Code</a>
+            <li><a href="https://github.com/cptanalatriste/jira-data-miner" class="button">JIRA Data Miner</a></li>
+            <li><a href="https://github.com/cptanalatriste/bug-report-simmodel" class="button">Game Generation Code</a>
             </li>
         </ul>
 
 
         <hr class="major"/>
 
-        <h2>New Mechanisms for Bug Reporting</h2>
+        <h2>Diagnosing Current Practice</h2>
+
+        <span class="image fit"><img src="images/mechanism_figure.png"
+                                     alt="Bug prioritization Processes"/></span>
+
 
         <p>After defining the internals of our empirical game, we
-            perform the equilibrium analysis of three bug reporting processes: Two of them are taken from existing
-            practices in the industry and one is proposed by the authors.</p>
+            perform the equilibrium analysis of bug prioritization processes adopted in industry.</p>
 
-        <h3>The Unsupervised Prioritization Mechanism</h3>
+        <h3>Distributed Bug Prioritization</h3>
 
-        <p><span class="image left"><img src="images/up_diagram.png"
-                                         alt="Unsupervised Prioritization"/></span>What we call a <em>unsupervised
-            prioritization process</em> is a reporting process where one team has assigned the bug reporting and bug
-            prioritization responsibilities while a different one is in charge of bug fixing.
+        <p>Is a reporting process where one engineer has assigned the bug reporting and bug prioritization responsibilities
+            while a different one is in charge of bug fixing.
+            In the figure above, it is represented by the blue components.
 
             <br/>
 
             By applying the procedure described before, we have found an equilibrium in
-            pure strategies were the probability of the <em>Heuristic Dishonest</em> strategy is 1.0 and 0.0 for the
+            pure strategies were the probability of the <em>Dishonest</em> strategy is 1.0 and 0.0 for the
             other 6 strategies in our catalog. The dominance analysis indicates that this is an equilibrium on dominant
             strategies.
-
         </p>
 
-        <h3>A Gatekeeper-Based Reporting process</h3>
+        <h3>Gatekeeper Process</h3>
 
-        <p><span class="image right"><img src="images/gk_diagram.png"
-                                          alt="Unsupervised Prioritization"/></span>In a <em>gatekeeper-based
-            process</em>, the bug reporting and bug prioritization responsibilities are assigned to different teams.
+        <p>In a <em>gatekeeper process</em>, the bug reporting and bug prioritization responsibilities are assigned to
+            different teams.
+            In the figure above, it is represented by the blue and red components.
 
             <br/>
 
-            The first gatekeeper configuration explored considers that gatekeepers can detect 90% of mislabeled
+            The first gatekeeper configuration explored considers that gatekeepers can detect 50% of mislabeled
             priorities: The equilibrium profile obtained through the process described previously
-            has a probability of 1.0 for the <em>Empirical Inflator</em> strategy while 0.0 for the other 6
+            has a probability of 1.0 for the <em>Dishonest</em> strategy while 0.0 for the other 6
             strategies.
+            The same result was obtained with a detection rate of 90%.
+            An ideal gatekeeper with perfect detection rate produce multiple equilibria.
         </p>
+
+
+
+        <ul class="actions" style="text-align: center">
+            <li><a href="equilibrium_results.html" class="button">All Equilibrium Results</a></li>
+        </ul>
+
+        <hr class="major"/>
+
+        <h2>The Assessor-Throttling Process</h2>
 
         <h3>A Throttling Mechanism</h3>
 
@@ -267,15 +271,7 @@
 
         </p>
 
-        <ul class="actions" style="text-align: center">
-            <li><a href="equilibrium_results.html" class="button">Equilibrium Results</a></li>
-            <li><a href="performance_comparison.html" class="button">Performance Comparison</a>
-            </li>
-        </ul>
 
-        <hr class="major"/>
-
-        <h2>A Support Tool for Throttling Bug Reporting</h2>
 
         <div class="box alt">
             <div class="row 50% uniform">
@@ -294,6 +290,8 @@
 
 
         <ul class="actions" style="text-align: center">
+            <li><a href="performance_comparison.html" class="button">Performance Comparison</a>
+            </li>
             <li><a href="https://cptanalatriste.github.io/inflation-tracker-extension/" class="button">Download the
                 Tool</a></li>
         </ul>
