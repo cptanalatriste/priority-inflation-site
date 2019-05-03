@@ -194,13 +194,9 @@
         <p>Is a reporting process where one engineer has assigned the bug reporting and bug prioritization responsibilities
             while a different one is in charge of bug fixing.
             In the figure above, it is represented by the blue components.
-
-            <br/>
-
             By applying the procedure described before, we have found an equilibrium in
             pure strategies were the probability of the <em>Dishonest</em> strategy is 1.0 and 0.0 for the
-            other 6 strategies in our catalog. The dominance analysis indicates that this is an equilibrium on dominant
-            strategies.
+            other strategies in our catalog.
         </p>
 
         <h3>Gatekeeper Process</h3>
@@ -208,9 +204,6 @@
         <p>In a <em>gatekeeper process</em>, the bug reporting and bug prioritization responsibilities are assigned to
             different teams.
             In the figure above, it is represented by the blue and red components.
-
-            <br/>
-
             The first gatekeeper configuration explored considers that gatekeepers can detect 50% of mislabeled
             priorities: The equilibrium profile obtained through the process described previously
             has a probability of 1.0 for the <em>Dishonest</em> strategy while 0.0 for the other 6
@@ -221,57 +214,54 @@
 
 
 
-        <ul class="actions" style="text-align: center">
-            <li><a href="equilibrium_results.html" class="button">All Equilibrium Results</a></li>
-        </ul>
+
 
         <hr class="major"/>
 
         <h2>The Assessor-Throttling Process</h2>
 
-        <h3>A Throttling Mechanism</h3>
 
-        <p><span class="image left"><img src="images/tr_diagram.png"
-                                         alt="Throttling Mechanism"/></span>We propose a
-            mechanism — which we call the <em>throttling bug reporting process</em> — that maintains the
-            decentralized prioritization attribute of unsupervised prioritization Reporting but incorporates a priority
-            assessment phase like in a gatekeeper-based process:
-
+        <p>We propose a
+            mechanism — that we call the <em>assessor-throttling</em> — that maintains the
+            decentralized prioritization attribute of unsupervised prioritization but incorporates a priority
+            assessment phase like in a gatekeeper process:
         </p>
 
         <ul>
-            <li><strong>The bug fixing team evaluates the bug prioritization task:</strong> After developing a patch,
+            <li><strong>The bug fixing team evaluates the bug prioritization:</strong> After developing a patch,
                 the
                 developer also assigns a priority label to the bug report, that might differ to the one assigned by the
                 bug
                 reporting team.
             </li>
 
-            <li><strong>Bug reporting team members have assigned a reputation value:</strong> On the throttling bug
-                reporting
-                process we assume that the developers have a fair understanding of the bug priority after developing its
+            <li><strong>Bug reporters have assigned a reputation value:</strong> In assessor-throttling we assume that
+                the developers have a fair understanding of the bug priority after developing its
                 corresponding patch. When a developer identifies a bug report with a priority label that differs from
                 his
                 assessment, he will penalize the offender by diminishing his reputation value.
             </li>
 
-            <li><strong>Bug fixing activities also depend on the reporter's reputation:</strong> For a bug to be fixed
+            <li><strong>Bug fixing depends on the reporter's reputation:</strong> For a bug to be fixed
                 or
-                delayed is not only a function of the priority label on the report, now it also depends on the
-                reputation
-                value of the reporter that placed the report.
+                delayed is not only a function of its priority label, in assessor-throttling it also depends on the
+                reputation of the reporter.
             </li>
         </ul>
 
         <p>
 
-            When we applied a penalty of 3% in case of dishonesty, the number of equilibrium is only one where
-            the <em>Heuristic Honest</em> strategy has a probability of 1.0. We obtained the same result when the
-            penalty value was set to 5%.
+            When we applied a dishonesty penalty of 20%, the number of equilibrium is only one where
+            the <em>Honest</em> strategy has a probability of 1.0. We obtained the same result when the
+            penalty value was set to 22%.
 
         </p>
 
+        <ul class="actions" style="text-align: center">
+            <li><a href="equilibrium_results.html" class="button">All Equilibrium Results</a></li>
+        </ul>
 
+        <h3>TheFed: Tool Support for Assessor-Throttling</h3>
 
         <div class="box alt">
             <div class="row 50% uniform">
@@ -283,17 +273,16 @@
 
         <p>As
             part of this project we built a software
-            tool to support the teams that adopt a throttling bug reporting
-            process, since according to our analysis is the best option to address Priority Inflation. Our tool —
-            called <em>JIRA Inflation Tracker</em> — is a Chrome extension for supporting teams that are using JIRA as
+            tool to support the teams that adopt assessor-throttling, since according to our analysis is the best option
+            to address Priority Inflation. Our tool —
+            called <em>TheFed</em> — is a Chrome extension for supporting teams that are using JIRA as
             their bug tracking system.</p>
 
 
         <ul class="actions" style="text-align: center">
-            <li><a href="performance_comparison.html" class="button">Performance Comparison</a>
+            <li><a href="https://github.com/cptanalatriste/inflation-tracker-extension" class="button">Download the
+                TheFed</a>
             </li>
-            <li><a href="https://cptanalatriste.github.io/inflation-tracker-extension/" class="button">Download the
-                Tool</a></li>
         </ul>
     </div>
 </section>
