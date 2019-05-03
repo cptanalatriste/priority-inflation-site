@@ -77,13 +77,12 @@
             increase
             the reported priority in order to maximize the number of fixes delivered. This situation — called Priority
             Inflation by practitioners — is analyzed using game theory. Game theory uses mathematical models to study
-            conflict and cooperation, and and we use them in this paper to identify inflation causes and to propose a
+            conflict and cooperation, and we use them in this paper to identify inflation causes and to propose a
             solution to this problem.</p>
 
         <p>We built a simulation model of bug reporting as a part of our empirical game-theoretic analysis, finding that
-            what we call an <em>Distributed Prioritization</em> process it is not incentive compatible since at
-            equilibrium
-            the <em>Dishonest</em> strategy has a probability of 1.0. We also evaluated our proposed bug
+            prioritization processes from industry are is not incentive compatible since at
+            equilibrium the <em>Dishonest</em> strategy has a positive probability. We also evaluated our proposed bug
             reporting process —based on inflation penalties and reporter reputation— finding that with only a 20%
             penalty factor we can move equilibrium towards a profile where the <em>Honest</em> strategy has a
             probability of 1.0.</p>
@@ -166,7 +165,7 @@
             reporter
             depends on the number of reported bugs that got fixed as well as its reported priority. Pay-off
             calculation is critical for equilibrium analysis as we need the pay-off value for each player on each
-            strategy profile. We will rely on a simulation model of the bug reporting process
+            strategy profile. We rely on a simulation model of the bug reporting process
             for obtaining the number
             of bug reports fixed per player per strategy profile.</p>
 
@@ -221,8 +220,7 @@
         <h2>The Assessor-Throttling Process</h2>
 
 
-        <p>We propose a
-            mechanism — that we call the <em>assessor-throttling</em> — that maintains the
+        <p>We propose a process — that we call the <em>assessor-throttling</em> — that maintains the
             decentralized prioritization attribute of unsupervised prioritization but incorporates a priority
             assessment phase like in a gatekeeper process:
         </p>
@@ -239,7 +237,7 @@
                 the developers have a fair understanding of the bug priority after developing its
                 corresponding patch. When a developer identifies a bug report with a priority label that differs from
                 his
-                assessment, he will penalize the offender by diminishing his reputation value.
+                assessment, he penalizes the offender by diminishing his reputation value.
             </li>
 
             <li><strong>Bug fixing depends on the reporter's reputation:</strong> For a bug to be fixed
@@ -250,7 +248,7 @@
         </ul>
 
         <p>
-
+            In the figure above, assessor-throttling is represented by the blue and green components.
             When we applied a dishonesty penalty of 20%, the number of equilibrium is only one where
             the <em>Honest</em> strategy has a probability of 1.0. We obtained the same result when the
             penalty value was set to 22%.
